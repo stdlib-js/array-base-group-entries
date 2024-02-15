@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2023 The Stdlib Authors.
@@ -16,28 +16,44 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
+
+import { Collection, AccessorArrayLike } from '@stdlib/types/array';
 
 /**
-* Group element entries as arrays associated with distinct keys.
+* Object key.
+*/
+type Key = string | symbol | number;
+
+/**
+* Interface describing returned group results.
+*/
+interface EntriesResults<K, T> {
+	/**
+	* Object properties.
+	*/
+	[key: K]: Array<[ number, T ]>;
+}
+
+/**
+* Groups element entries as arrays associated with distinct keys.
 *
-* @module @stdlib/array-base-group-entries
+* @param x - input array
+* @param groups - array defining which group an element in the input array belongs to
+* @returns group results
 *
 * @example
-* var groupEntries = require( '@stdlib/array-base-group-entries' );
-*
 * var x = [ 'beep', 'boop', 'foo', 'bar' ];
 * var groups = [ 'b', 'b', 'f', 'b' ];
 *
 * var out = groupEntries( x, groups );
 * // returns { 'b': [ [ 0, 'beep' ], [ 1, 'boop' ], [ 3, 'bar' ] ], 'f': [ [ 2, 'foo' ] ] }
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function groupEntries<T = unknown>( x: Collection<T> | AccessorArrayLike<T>, groups: Collection<Key> | AccessorArrayLike<Key> ): EntriesResults<Key, T>;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = groupEntries;
