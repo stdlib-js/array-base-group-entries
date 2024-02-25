@@ -52,6 +52,11 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import groupEntries from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-group-entries@deno/mod.js';
+```
+The previous example will load the latest bundled code from the deno branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/array-base-group-entries/tags). For example,
+
+```javascript
 import groupEntries from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-group-entries@v0.2.1-deno/mod.js';
 ```
 
@@ -104,7 +109,7 @@ var out = groupEntries( x, groups );
 ```javascript
 import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@deno/mod.js';
 import take from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-take-indexed@deno/mod.js';
-import groupEntries from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-group-entries@v0.2.1-deno/mod.js';
+import groupEntries from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-group-entries@deno/mod.js';
 
 // Define an initial array of values:
 var values = [ 'beep', 'boop', 'foo', 'bar', 'woot', 'woot' ];
